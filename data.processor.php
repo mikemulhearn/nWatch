@@ -3,7 +3,7 @@
 // Protect the form is a password is set
 
 if( check_security() > 1 AND isset($_POST['form_type']) AND  $_POST['form_type'] != 'login'):
-    //echo "<script>console.log('check_security() > 1 -- " . $check_security() . "' );</script>";
+    echo "<script>console.log('check_security() > 1 -- " . check_security() . "' );</script>";
     //$two = isset($_POST['form_type'])
     //echo "<script>console.log('$two -- " . $two . "' );</script>";
     //$three = $_POST['form_type']
