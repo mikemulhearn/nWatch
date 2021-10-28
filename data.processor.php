@@ -2,7 +2,8 @@
 
 // Protect the form is a password is set
 
-if( check_security() > 1 AND isset($_POST['form_type']) AND $_POST['form_type'] != 'login'):
+//if( check_security() > 1 AND isset($_POST['form_type']) AND $_POST['form_type'] != 'login'):
+if( isset($_POST['form_type']) AND $_POST['form_type'] != 'login'):
     $one = check_security();
     $test_one = check_security() > 1;
     echo "<script>console.log('check_security() > 1 -- " . $one . "' );</script>";
