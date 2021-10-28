@@ -4,13 +4,14 @@
 
 if( check_security() > 1 AND isset($_POST['form_type']) AND  $_POST['form_type'] != 'login'):
     $one = check_security();
+    $test_one = check_security() > 1;
     echo "<script>console.log('check_security() > 1 -- " . $one . "' );</script>";
     $two = isset($_POST['form_type']);
     echo "<script>console.log('two -- " . $two . "' );</script>";
     $three = $_POST['form_type'];
-    $test_three = $_POST['form_type'] != 'login'
+    $test_three = $_POST['form_type'] != 'login';
     echo "<script>console.log('_POST[form_type] != login -- " . $three . "' );</script>";
-    echo "<script>console.log('Test one: " . check_security() > 1 . "');</script>";
+    echo "<script>console.log('Test one: " . $test_one . "');</script>";
     echo "<script>console.log('Test two: " . $two . "');</script>";
     echo "<script>console.log('Test three: " . $test_three . "');</script>";
 	exit('nope');
