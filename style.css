@@ -147,7 +147,7 @@ table td {
 
 .nodes_status{}
 .nodes_status span.nodes-stats, .nodes_status span.ext-stats, .nodes_status span.stats{
-	font-size: clamp(1rem, 5vw, 1rem);
+	font-size: clamp(1rem, 3vw, 1rem);
 }
 
 /* Datatable */ 
