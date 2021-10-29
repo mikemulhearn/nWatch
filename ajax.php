@@ -49,7 +49,6 @@ if(isset($_POST['form_type'])) :
 		
 		case 'nodes_stats': 
 			
-            prof_flag("node stats start");
 			$nodes 				= get_nodes(1);
 			$json['proposals'] 	= $nodes['total_proposals']; 
 			$json['relay']		= $nodes['average_relay']; 
