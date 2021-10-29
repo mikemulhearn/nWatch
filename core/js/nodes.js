@@ -19,12 +19,12 @@ $(document).ready(function() {
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'started refreshing node stats');
 		refresh_value('nodes_stats','nodes'); 
-	    var currentDate = '[' + new Date().toUTCString() + '] ';
-	    console.log(currentDate + ' :: ' + 'started refreshing table');
+	}, 60000 ).then(() ==> {
+	    console.log(currentDate + ' :: ' + 'completed refreshing node stats');
 		table.ajax.reload();
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'completed refreshing table');
-	}, 60000 );
+	})
 		
 		
 	sleep(5000).then(() => {
