@@ -45,9 +45,10 @@ $(document).ready(function() {
 			"paging":   true,
 			"lengthMenu": [[100, 250, 500, -1], [100, 250, 500, "All"]],
 			"responsive": true,
+			"deferRender": true,
+			"deferLoading": true,
 			"ajax": 'ajax.php',
 			"language": { search: '', searchPlaceholder: "Search..." },
-			"deferRender": true,
 			"aoColumnDefs": [ {
 				"aTargets": [2],
 				"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
