@@ -16,7 +16,6 @@ $(document).ready(function() {
 
 	function update_ext_stats() {
 	    refresh_value('ext_stats','ext');
-	    sleep(20000);
 	    setTimeout(update_ext_stats, 20000);
 	}
 
@@ -38,7 +37,7 @@ $(document).ready(function() {
 	//setInterval(update_node_stats.then(() ==> update_table()), 60000 );
 		
 		
-	sleep(20000).then(() => {
+	sleep(100).then(() => {
 	
 		// Node table management 
 
@@ -115,7 +114,7 @@ $(document).ready(function() {
 								{
 									Counter: data[prop]
 								}, {
-									duration: 5000,
+									duration: 1000,
 									easing: 'swing',
 									step: function(now) {
 										$(this).text(toLocale(Math.ceil(now)));
