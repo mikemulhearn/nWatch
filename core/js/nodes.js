@@ -11,7 +11,7 @@ $(document).ready(function() {
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'started refreshing table');
 		table.ajax.reload();
-	    setTimeout(update_table, 20000);
+	    setTimeout(update_table, 60000);
 	}
 
 	function update_ext_stats() {
