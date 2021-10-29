@@ -24,7 +24,7 @@ $(document).ready(function() {
 		table.ajax.reload();
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'completed refreshing table');
-	})
+	});
 		
 		
 	sleep(5000).then(() => {
