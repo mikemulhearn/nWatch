@@ -7,6 +7,12 @@ $(document).ready(function() {
 	var currentDate = '[' + new Date().toUTCString() + '] ';
 	console.log(currentDate + ' :: ' + 'completed refreshing node stats (first time)');
 
+	function update_node_stats() {
+	    var currentDate = '[' + new Date().toUTCString() + '] ';
+	    console.log(currentDate + ' :: ' + 'started refreshing node stats');
+		refresh_value('nodes_stats','nodes');
+	}
+
 	
 	//Refresh every 2 minutes 
 	setInterval( function () {
@@ -15,11 +21,7 @@ $(document).ready(function() {
 	
 	
 	//To differ the requests from the table 
-	setInterval( (function () {
-	    var currentDate = '[' + new Date().toUTCString() + '] ';
-	    console.log(currentDate + ' :: ' + 'started refreshing node stats');
-		refresh_value('nodes_stats','nodes'); 
-	}).then(() ==> {
+	setInterval(update_node_stats.then(() ==> {
 	    console.log(currentDate + ' :: ' + 'completed refreshing node stats');
 		table.ajax.reload();
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
