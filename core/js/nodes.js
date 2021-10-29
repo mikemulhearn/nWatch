@@ -20,7 +20,7 @@ $(document).ready(function() {
 	//refresh_value('nodes_stats','nodes');
 	update_node_stats();
 
-	update_table();
+	//update_table();
 
 	update_ext_stats();
 
@@ -70,6 +70,8 @@ $(document).ready(function() {
 			} ]
 			
 		});
+
+		update_table();
 	
 	});
 	
