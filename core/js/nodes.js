@@ -138,7 +138,7 @@ $(document).ready(function() {
 								{
 									Counter: data[prop]
 								}, {
-									duration: 5000,
+									duration: 1000,
 									easing: 'swing',
 									step: function(now) {
 										$(this).text(toLocale(Math.ceil(now)));
