@@ -5,15 +5,21 @@ $(document).ready(function() {
 	
 	
 	//Refresh every 2 minutes 
-	setInterval( function () {				
+	setInterval( function () {
 		refresh_value('ext_stats','ext');
 	}, 20000 );
 	
 	
 	//To differ the requests from the table 
-	setInterval( function () {				
+	setInterval( function () {
+	    var currentDate = '[' + new Date().toUTCString() + '] ';
+	    console.log(currentDate + ' :: ' + 'started refreshing node stats');
 		refresh_value('nodes_stats','nodes'); 
+	    var currentDate = '[' + new Date().toUTCString() + '] ';
+	    console.log(currentDate + ' :: ' + 'started refreshing table');
 		table.ajax.reload();
+	    var currentDate = '[' + new Date().toUTCString() + '] ';
+	    console.log(currentDate + ' :: ' + 'completed refreshing table');
 	}, 20000 );
 		
 		
