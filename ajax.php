@@ -1,4 +1,25 @@
-<?php 
+<?php
+
+// Call this at each point of interest, passing a descriptive string
+function prof_flag($str)
+{
+    global $prof_timing, $prof_names;
+    $prof_timing[] = microtime(true);
+    $prof_names[] = $str;
+}
+
+// Call this when you're done and want to see the results
+function prof_print()
+{
+    global $prof_timing, $prof_names;
+    $size = count($prof_timing);
+    for($i=0;$i<$size - 1; $i++)
+    {
+        echo "<b>{$prof_names[$i]}</b><br>";
+        echo sprintf("&nbsp;&nbsp;&nbsp;%f<br>", $prof_timing[$i+1]-$prof_timing[$i]);
+    }
+    echo "<b>{$prof_names[$size-1]}</b><br>";
+}
 
 session_start(); 
 header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + (60 * 60))); // 1 hour
@@ -7,8 +28,9 @@ if(!isset($_SESSION['user'])):
 	echo 'Auth required';
 	exit(); 
 endif; 
-
+prof_flag("include");
 include_once('functions.php'); 
+prof_flag("start");
 
 // Locale definition 
 if(!isset($_COOKIE['nW_locale'])):
@@ -49,6 +71,7 @@ if(isset($_POST['form_type'])) :
 		
 		case 'nodes_stats': 
 			
+            prof_flag("node stats start");
 			$nodes 				= get_nodes(1);
 			$json['proposals'] 	= $nodes['total_proposals']; 
 			$json['relay']		= $nodes['average_relay']; 
@@ -60,7 +83,9 @@ if(isset($_POST['form_type'])) :
 			endforeach; 
 				
 			echo json_encode($json); 
-			
+            prof_flag("node stats end");
+            prof_print();
+
 			exit(); 
 
 		break; 
