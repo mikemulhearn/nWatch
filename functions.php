@@ -536,8 +536,8 @@ function get_nodes($blockCount = 1){
 							break; 
 							
 							default : 
-								$return['nodes'][$ip]['style']['border'] 	= 'border-warning';
-								$return['nodes'][$ip]['style']['cell'] 		= 'bg-warning';
+								$return['nodes'][$ip]['style']['border'] 	= 'border-success';
+								$return['nodes'][$ip]['style']['cell'] 		= 'bg-success';
 								$return['nodes'][$ip]['style']['img'] 		= 'core/img/sync.svg';
 							break; 
 						
