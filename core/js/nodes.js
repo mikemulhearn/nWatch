@@ -8,13 +8,13 @@ $(document).ready(function() {
 	setInterval( function () {				
 		table.ajax.reload();
 		refresh_value('ext_stats','ext'); 
-	}, 60000 );
+	}, 20000 );
 	
 	
 	//To differ the requests from the table 
 	setInterval( function () {				
 		refresh_value('nodes_stats','nodes'); 
-	}, 60000 );
+	}, 20000 );
 		
 		
 	sleep(5000).then(() => {
