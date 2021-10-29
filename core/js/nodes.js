@@ -1,13 +1,17 @@
 $(document).ready(function() {
 	
 	// First load 
+	var currentDate = '[' + new Date().toUTCString() + '] ';
+	console.log(currentDate + ' :: ' + 'started refreshing node stats (first time)');
 	refresh_value('nodes_stats','nodes');
-	
+	var currentDate = '[' + new Date().toUTCString() + '] ';
+	console.log(currentDate + ' :: ' + 'completed refreshing node stats (first time)');
+
 	
 	//Refresh every 2 minutes 
 	setInterval( function () {
 		refresh_value('ext_stats','ext');
-	}, 20000 );
+	}, 120000 );
 	
 	
 	//To differ the requests from the table 
