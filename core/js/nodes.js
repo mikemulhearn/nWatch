@@ -1,16 +1,10 @@
 $(document).ready(function() {
-	
-	// First load 
-	var currentDate = '[' + new Date().toUTCString() + '] ';
-	console.log(currentDate + ' :: ' + 'started refreshing node stats (first time)');
-	refresh_value('nodes_stats','nodes');
-	var currentDate = '[' + new Date().toUTCString() + '] ';
-	console.log(currentDate + ' :: ' + 'completed refreshing node stats (first time)');
 
 	function update_node_stats() {
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'started refreshing node stats');
 		refresh_value('nodes_stats','nodes');
+		setTimeout(update_node_stats, 60000);
 	}
 
 	function update_table() {
@@ -18,9 +12,13 @@ $(document).ready(function() {
 		table.ajax.reload();
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'completed refreshing table');
+	    setTimeout(update_table, 60000);
 	}
 
-	
+	// First load 
+	//refresh_value('nodes_stats','nodes');
+	update_node_stats();
+
 	//Refresh every 2 minutes 
 	setInterval( function () {
 		refresh_value('ext_stats','ext');
@@ -28,7 +26,7 @@ $(document).ready(function() {
 	
 	
 	//To differ the requests from the table 
-	setInterval(update_node_stats.then(() ==> update_table()), 60000 );
+	//setInterval(update_node_stats.then(() ==> update_table()), 60000 );
 		
 		
 	sleep(5000).then(() => {
