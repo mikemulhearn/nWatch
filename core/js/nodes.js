@@ -13,12 +13,16 @@ $(document).ready(function() {
 	function update_ext_stats() {
 	    refresh_value('ext_stats','ext');
 	    sleep(20000);
-	    setTimeout(update_table, 60000);
+	    setTimeout(update_ext_stats, 60000);
 	}
 
 	// First load 
 	//refresh_value('nodes_stats','nodes');
 	update_node_stats();
+
+	update_table();
+
+	update_ext_stats();
 
 	//Refresh every 2 minutes 
 	//setInterval( function () {
