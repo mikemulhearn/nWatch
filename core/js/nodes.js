@@ -6,15 +6,15 @@ $(document).ready(function() {
 	
 	//Refresh every 2 minutes 
 	setInterval( function () {				
-		table.ajax.reload();
-		refresh_value('ext_stats','ext'); 
+		refresh_value('ext_stats','ext');
 	}, 20000 );
 	
 	
 	//To differ the requests from the table 
 	setInterval( function () {				
 		refresh_value('nodes_stats','nodes'); 
-	}, 60000 );
+		table.ajax.reload();
+	}, 20000 );
 		
 		
 	sleep(5000).then(() => {
