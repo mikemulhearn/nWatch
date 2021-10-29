@@ -1,11 +1,15 @@
 $(document).ready(function() {
 
 	function update_node_stats() {
+	    var currentDate = '[' + new Date().toUTCString() + '] ';
+	    console.log(currentDate + ' :: ' + 'started updating node stats');
 		refresh_value('nodes_stats','nodes');
 		setTimeout(update_node_stats, 60000);
 	}
 
 	function update_table() {
+	    var currentDate = '[' + new Date().toUTCString() + '] ';
+	    console.log(currentDate + ' :: ' + 'started refreshing table');
 		table.ajax.reload();
 	    setTimeout(update_table, 60000);
 	}
