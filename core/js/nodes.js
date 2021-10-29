@@ -20,7 +20,7 @@ $(document).ready(function() {
 		table.ajax.reload();
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'completed refreshing table');
-	}, 20000 );
+	}, 60000 );
 		
 		
 	sleep(5000).then(() => {
