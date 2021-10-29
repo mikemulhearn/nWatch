@@ -38,7 +38,7 @@ $(document).ready(function() {
 	//setInterval(update_node_stats.then(() ==> update_table()), 60000 );
 		
 		
-	sleep(5000).then(() => {
+	sleep(20000).then(() => {
 	
 		// Node table management 
 
@@ -115,7 +115,7 @@ $(document).ready(function() {
 								{
 									Counter: data[prop]
 								}, {
-									duration: 10000,
+									duration: 5000,
 									easing: 'swing',
 									step: function(now) {
 										$(this).text(toLocale(Math.ceil(now)));
@@ -139,7 +139,7 @@ $(document).ready(function() {
 								{
 									Counter: data[prop]
 								}, {
-									duration: 10000,
+									duration: 5000,
 									easing: 'swing',
 									step: function(now) {
 										$(this).text(toLocale(Math.ceil(now)));
