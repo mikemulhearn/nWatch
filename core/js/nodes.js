@@ -47,7 +47,7 @@ $(document).ready(function() {
 			"responsive": true,
 			"ajax": 'ajax.php',
 			"language": { search: '', searchPlaceholder: "Search..." },
-			
+			"deferRender": true,
 			"aoColumnDefs": [ {
 				"aTargets": [2],
 				"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
