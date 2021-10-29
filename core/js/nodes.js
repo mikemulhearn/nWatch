@@ -14,7 +14,7 @@ $(document).ready(function() {
 	//To differ the requests from the table 
 	setInterval( function () {				
 		refresh_value('nodes_stats','nodes'); 
-	}, 20000 );
+	}, 60000 );
 		
 		
 	sleep(5000).then(() => {
