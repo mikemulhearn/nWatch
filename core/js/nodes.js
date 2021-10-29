@@ -15,16 +15,16 @@ $(document).ready(function() {
 	
 	
 	//To differ the requests from the table 
-	setInterval( function () {
+	setInterval( (function () {
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'started refreshing node stats');
 		refresh_value('nodes_stats','nodes'); 
-	}, 60000 ).then(() ==> {
+	}).then(() ==> {
 	    console.log(currentDate + ' :: ' + 'completed refreshing node stats');
 		table.ajax.reload();
 	    var currentDate = '[' + new Date().toUTCString() + '] ';
 	    console.log(currentDate + ' :: ' + 'completed refreshing table');
-	});
+	}), 60000 );
 		
 		
 	sleep(5000).then(() => {
